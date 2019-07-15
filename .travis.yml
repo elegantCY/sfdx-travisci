@@ -18,10 +18,10 @@ before_install:
 - sfdx --version
 - sfdx plugins --core
 - sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key
-  --username $USERNAME --setdefaultdevhubusername -a mytest02
+  --username $USERNAME --setdefaultdevhubusername -a HubOrg
 script:
 - #sfdx force:org:create -v HubOrg -s -f config/project-scratch-def.json -a ciorg --wait
   #5
-- sfdx force:org:display -u mytest02
-- sfdx force:source:deploy -m ApexClass -u mytest02 -w 10
+- sfdx force:org:display -u HubOrg
+- sfdx force:source:deploy -m ApexClass -u HubOrg -w 10
 - sfdx #force:apex:test:run -u mytest02 --wait 10
