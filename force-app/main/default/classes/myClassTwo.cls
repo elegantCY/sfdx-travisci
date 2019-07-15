@@ -3,6 +3,6 @@ public with sharing class myClassTwo {
 
     }
     private static void createAccount(){
-        System.debug("hello");
+        System.debug('hello');
     }
 }
